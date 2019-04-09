@@ -10,8 +10,12 @@ node{
     stage('Build image') {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
-
-        app = docker.build("rahul45/hellonode")
+         agent {
+                label 'docker-nodejs-slave'
+            }
+            steps {
+                app = docker.build("rahul45/hellonode")
+            }
     }
 
     stage('Test image') {
