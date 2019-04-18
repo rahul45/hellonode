@@ -7,7 +7,7 @@ String webRepo = 'hellonode'
 pipeline {
     agent any
     environment {
-        DOCKER_CREDENTIALS_ID = 'docker-creds'
+        DOCKER_CREDENTIALS_ID = 'docker-hub-cred'
         DEVOPS_METRICS_ENABLED = 'false'
     }
     stages {
